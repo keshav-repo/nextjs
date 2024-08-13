@@ -1,5 +1,4 @@
 import mongoose, { Mongoose } from 'mongoose';
-//import { MongoMemoryServer } from 'mongodb-memory-server';
 
 var connection: Mongoose;
 

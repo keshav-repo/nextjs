@@ -1,13 +1,10 @@
 import { fetchEmployeesById } from "@/app/lib/EmployeeLibrary";
 import { Employee } from "@/app/lib/defination";
 
-
 export default async function Home() {
 
     const employee: Employee = await fetchEmployeesById('1');
-
     const employee2: Employee = await fetchEmployeesById('1');
-
     const employee3: Employee = await fetchEmployeesById('1');
 
     return (
