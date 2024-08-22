@@ -1,11 +1,14 @@
 import { fetchEmployeesById } from "@/app/lib/EmployeeLibrary";
 import { Employee } from "@/app/lib/defination";
 
-export default async function Home() {
+export default async function EmployeePage({
+    params,
+}: {
+    params: { empId: string };
+}) {
 
-    const employee: Employee = await fetchEmployeesById('1');
-    const employee2: Employee = await fetchEmployeesById('1');
-    const employee3: Employee = await fetchEmployeesById('1');
+    console.log(`empid is ${params.empId}`)
+    const employee: Employee = await fetchEmployeesById(params.empId);
 
     return (
         <main >

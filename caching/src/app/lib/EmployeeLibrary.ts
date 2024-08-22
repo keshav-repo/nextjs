@@ -24,7 +24,8 @@ export const fetchEmployees = async () => {
 //     }
 // })
 
-export const fetchEmployeesById = cache(async (id: string): Promise<Employee> => {
+
+export const fetchEmployeesById = async (id: string): Promise<Employee> => {
     try {
         const res = await fetch(`http://localhost:3000/api/employee?empId=${id}`);
         const employees: Employee = await res.json();
@@ -34,5 +35,4 @@ export const fetchEmployeesById = cache(async (id: string): Promise<Employee> =>
         console.error(`error fetching article`);
         throw err;
     }
-})
-
+}

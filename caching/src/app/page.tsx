@@ -1,9 +1,6 @@
 import { fetchEmployees } from "./lib/EmployeeLibrary";
 import { Employee } from "./lib/defination";
 
-import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@nextui-org/react";
-
-
 export default async function Home() {
 
   const employees: Employee[] = await fetchEmployees();
