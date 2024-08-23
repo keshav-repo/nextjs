@@ -1,5 +1,6 @@
 import { fetchEmployeesById } from "@/app/lib/EmployeeLibrary";
 import { Employee } from "@/app/lib/defination";
+import { revalidatePath } from "next/cache";
 
 export default async function EmployeePage({
     params,
@@ -7,7 +8,8 @@ export default async function EmployeePage({
     params: { empId: string };
 }) {
 
-    console.log(`empid is ${params.empId}`)
+    revalidatePath('/api/employee')
+
     const employee: Employee = await fetchEmployeesById(params.empId);
 
     return (

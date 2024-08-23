@@ -1,10 +1,12 @@
+import { cookies } from "next/headers";
 import { fetchEmployees } from "./lib/EmployeeLibrary";
 import { Employee } from "./lib/defination";
+
+export const revalidate = 30
 
 export default async function Home() {
 
   const employees: Employee[] = await fetchEmployees();
-  // const employees2: Employee[] = await fetchEmployees();
 
   return (
     <main >

@@ -6,7 +6,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { EmployeeModel } from '@/app/model';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    // await connectDB();
+    await connectDB();
     if (req.method === 'POST') {
         try {
             const { id, name, address, department }: Employee = req.body;
