@@ -7,8 +7,14 @@ export default async function ProductPage({
 }: {
     params: { pid: string };
 }) {
+
     const pid = parseInt(params.pid);
     const product: Product | undefined = fetchProduct(pid);
+
+    if (!product) {
+        throw new Error("product not found");
+    }
+
     return (
         <div>
             <table>
